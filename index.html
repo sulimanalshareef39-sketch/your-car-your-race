@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="سيارتك سباقك - أكبر منصة عربية لمقارنة السيارات الرياضية والعائلية.">
+
+    <meta name="theme-color" content="#111827">
+
+    <title>سيارتك سباقك</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar container">
+
+        <div class="logo">
+            🏎️ سيارتك سباقك
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="#hero">الرئيسية</a></li>
+
+            <li><a href="#compare">المقارنة</a></li>
+
+            <li><a href="#cars-list">السيارات</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<!-- Hero -->
+
+<section class="hero" id="hero">
+
+    <div class="hero-content">
+
+        <h1>🏎️ سيارتك سباقك</h1>
+
+        <p>
+
+            أكبر منصة عربية لمقارنة السيارات الرياضية والعائلية
+            بطريقة احترافية وسريعة.
+
+        </p>
+
+        <a href="#compare" class="start-btn">
+            ابدأ المقارنة
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ===========================
+     Compare Section
+=========================== -->
+
+<section id="compare" class="compare-section container">
+
+    <h2>🚗 قارن بين سيارتين</h2>
+
+    <p class="compare-text">
+        اختر سيارتين ثم اضغط على زر المقارنة لمعرفة أيهما الأفضل.
+    </p>
+
+    <div class="compare-box">
+
+        <select id="car1">
+
+            <option value="">اختر السيارة الأولى</option>
+
+        </select>
+
+        <span class="vs">VS</span>
+
+        <select id="car2">
+
+            <option value="">اختر السيارة الثانية</option>
+
+        </select>
+
+        <button id="compareBtn" type="button">
+
+            مقارنة
+
+        </button>
+
+    </div>
+
+    <div id="result"></div>
+
+</section>
+
+<!-- ===========================
+     Search
+=========================== -->
+
+<section class="search-section container">
+
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="🔍 ابحث عن سيارة..."
+        autocomplete="off">
+
+    <div id="brandFilters"></div>
+
+</section>
+
+<!-- ===========================
+     Cars
+=========================== -->
+
+<section id="cars-list" class="container">
+
+    <h2>
+
+        🚘 السيارات المتوفرة
+
+    </h2>
+
+    <div
+        id="carsContainer"
+        class="cars-grid">
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     Footer
+=========================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <h3>🏎️ سيارتك سباقك</h3>
+
+        <p>
+
+            جميع المعلومات المعروضة هدفها المقارنة بين السيارات.
+
+        </p>
+
+        <p>
+
+            © 2026 جميع الحقوق محفوظة.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

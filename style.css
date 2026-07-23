@@ -1,0 +1,1330 @@
+/* ================================
+   Reset
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#111827;
+    --card:#1f2937;
+    --card2:#273549;
+
+    --primary:#2563eb;
+    --primary-hover:#1d4ed8;
+
+    --text:#ffffff;
+    --text2:#d1d5db;
+
+    --green:#22c55e;
+    --red:#ef4444;
+
+    --radius:16px;
+    --shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* ================================
+   Header
+================================ */
+
+header{
+    background:var(--bg);
+}
+
+/* ================================
+   Navbar
+================================ */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:9999;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 45px;
+
+    background:rgba(17,24,39,.95);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    color:#38bdf8;
+    font-size:30px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    bottom:-8px;
+    right:0;
+
+    width:0;
+    height:2px;
+
+    background:#38bdf8;
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ================================
+   Hero
+================================ */
+
+.hero{
+    min-height:85vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.75)),
+    url("images/hero.jpg") center/cover no-repeat;
+
+    padding:90px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    animation:fadeUp .9s ease;
+}
+
+.hero h1{
+    font-size:68px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:23px;
+    color:var(--text2);
+    margin-bottom:35px;
+}
+
+.start-btn{
+    display:inline-block;
+
+    padding:18px 45px;
+
+    background:var(--primary);
+
+    color:white;
+    text-decoration:none;
+
+    border-radius:14px;
+
+    font-size:20px;
+
+    transition:.35s;
+}
+
+.start-btn:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--primary-hover);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+}
+.hero{
+
+    background-image:url("images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+
+/* ================================
+   Compare
+================================ */
+
+.compare-section{
+    width:95%;
+    max-width:1400px;
+    margin:70px auto;
+    text-align:center;
+}
+
+.compare-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+}
+
+.compare-box select{
+
+    width:290px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:0 16px;
+
+    background:var(--card);
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.compare-box select:focus{
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.35);
+
+}
+
+.compare-box button{
+
+    height:48px;
+
+    padding:0 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.compare-box button:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+
+}
+
+.vs{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+#result{
+
+    margin-top:40px;
+
+    display:grid;
+
+    gap:25px;
+
+}
+
+/* ================================
+   Animation
+================================ */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===================================
+   Cards
+=================================== */
+
+.card{
+    background:var(--card);
+    border-radius:20px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,.06);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h2{
+    color:#60a5fa;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.card p{
+    margin:14px 0;
+    font-size:17px;
+    color:var(--text2);
+}
+
+.car-img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:16px;
+    margin-bottom:20px;
+}
+
+/* ===================================
+   Compare Table
+=================================== */
+
+.compare-layout{
+    display:grid;
+    grid-template-columns:1fr 380px;
+    gap:30px;
+    align-items:start;
+}
+
+.compare-table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:18px;
+    background:var(--card);
+    box-shadow:var(--shadow);
+}
+
+.compare-table th{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:18px;
+
+    font-size:18px;
+
+}
+
+.compare-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    text-align:center;
+
+}
+
+.compare-table tr{
+
+    transition:.25s;
+
+}
+
+.compare-table tr:hover{
+
+    background:#23324b;
+
+}
+
+.table-img{
+
+    width:220px;
+
+    height:140px;
+
+    border-radius:14px;
+
+    object-fit:cover;
+
+}
+
+/* ===================================
+   Winner Card
+=================================== */
+
+.winner-card{
+
+    position:sticky;
+
+    top:95px;
+
+    background:linear-gradient(180deg,#1f2937,#111827);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.winner-card h2{
+
+    font-size:30px;
+
+    color:white;
+
+}
+
+.winner-card h1{
+
+    margin:18px 0;
+
+    color:#4ade80;
+
+    font-size:38px;
+
+}
+
+.winner-card p{
+
+    color:var(--text2);
+
+    line-height:1.8;
+
+}
+
+.winner-image{
+
+    width:100%;
+
+    height:210px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    margin:20px 0;
+
+}
+
+.winner-trophy{
+
+    font-size:60px;
+
+    margin:15px 0;
+
+}
+
+/* ===================================
+   Winner Status
+=================================== */
+
+.winner{
+
+    background:#15803d !important;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.winner::after{
+
+    content:" 🏆";
+
+}
+
+.status-dot{
+
+    width:10px;
+
+    height:10px;
+
+    display:inline-block;
+
+    border-radius:50%;
+
+    margin-right:8px;
+
+}
+
+.status-dot.win{
+
+    background:#22c55e;
+
+    box-shadow:0 0 10px #22c55e;
+
+}
+
+.status-dot.lose{
+
+    background:#ef4444;
+
+    box-shadow:0 0 10px #ef4444;
+
+}
+
+/* ===================================
+   Cars Section
+=================================== */
+
+#cars-list{
+
+    width:95%;
+
+    max-width:1450px;
+
+    margin:90px auto;
+
+}
+
+#cars-list h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+.cars-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:28px;
+
+}
+
+.car-card{
+
+    background:linear-gradient(180deg,#1f2937,#131d2c);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.30);
+
+}
+
+.car-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.35);
+
+}
+
+.car-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.car-card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.car-card h3{
+
+    text-align:center;
+
+    color:#60a5fa;
+
+    font-size:25px;
+
+    padding:18px;
+
+}
+
+.car-card p{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 18px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.car-card strong{
+
+    color:#60a5fa;
+
+}
+
+.details-btn{
+
+    width:88%;
+
+    margin:22px auto;
+
+    display:block;
+
+    padding:14px;
+
+    background:var(--primary);
+
+    border:none;
+
+    border-radius:14px;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.details-btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:scale(1.03);
+
+}
+
+/* ===================================
+   Details Page
+=================================== */
+
+.details-card{
+
+    max-width:1000px;
+
+    margin:60px auto;
+
+    background:var(--card);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.details-image{
+
+    width:100%;
+
+    max-width:750px;
+
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+}
+
+.details-card h1{
+
+    color:#60a5fa;
+
+    margin-bottom:20px;
+
+    font-size:42px;
+
+}
+
+.details-card p{
+
+    font-size:20px;
+
+    margin:18px 0;
+
+    color:var(--text2);
+
+}
+
+/* ===================================
+   Performance Score
+=================================== */
+
+.score-box{
+
+    display:flex;
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.score-card{
+
+    flex:1;
+
+    background:var(--card);
+
+    padding:24px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.score-number{
+
+    font-size:44px;
+
+    color:#22c55e;
+
+    font-weight:bold;
+
+    margin:20px 0;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:16px;
+
+    background:#374151;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:0;
+
+    background:linear-gradient(90deg,#22c55e,#3b82f6);
+
+    border-radius:50px;
+
+    transition:1s;
+
+}
+
+.spec-bar{
+
+    width:100%;
+
+    height:8px;
+
+    background:#374151;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+}
+
+.spec-fill{
+
+    height:100%;
+
+    width:0;
+
+    background:linear-gradient(90deg,#22c55e,#3b82f6);
+
+    transition:.8s;
+
+}
+/* ===================================
+   Search
+=================================== */
+
+#searchInput{
+
+    width:100%;
+    max-width:600px;
+
+    height:55px;
+
+    margin:35px auto;
+
+    display:block;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:0 25px;
+
+    background:#1f2937;
+
+    color:#fff;
+
+    font-size:17px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+#searchInput:focus{
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.30);
+
+}
+
+/* ===================================
+   Brand Filters
+=================================== */
+
+#brandFilters{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin:30px 0;
+
+}
+
+#brandFilters button{
+
+    padding:11px 22px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#1f2937;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+#brandFilters button:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-3px);
+
+}
+
+#brandFilters button.active{
+
+    background:#2563eb;
+
+}
+
+/* ===================================
+   Loading Animation
+=================================== */
+
+.loading{
+
+    width:70px;
+
+    height:70px;
+
+    border:6px solid rgba(255,255,255,.15);
+
+    border-top:6px solid #2563eb;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin:50px auto;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===================================
+   Fade Animation
+=================================== */
+
+.fade-in{
+
+    animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+   Custom Scrollbar
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ===================================
+   Selection
+=================================== */
+
+::selection{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media(max-width:1200px){
+
+.compare-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.winner-card{
+
+position:relative;
+
+top:auto;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+.navbar{
+
+padding:18px 20px;
+
+}
+
+.nav-links{
+
+gap:15px;
+
+}
+
+.compare-box{
+
+flex-direction:column;
+
+}
+
+.compare-box select{
+
+width:100%;
+
+max-width:420px;
+
+}
+
+.score-box{
+
+flex-direction:column;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding:70px 20px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.logo{
+
+font-size:23px;
+
+}
+
+.navbar{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.cars-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.details-image{
+
+height:250px;
+
+}
+
+.table-img{
+
+width:100%;
+
+height:170px;
+
+}
+
+.compare-table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.start-btn{
+
+width:100%;
+
+}
+
+.details-card{
+
+padding:20px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+.compare-box button{
+
+width:100%;
+
+max-width:420px;
+
+}
+
+}
+
+/* ===================================
+   Utilities
+=================================== */
+
+.hidden{
+
+display:none !important;
+
+}
+
+.text-center{
+
+text-align:center;
+
+}
+
+.mt-20{
+
+margin-top:20px;
+
+}
+
+.mb-20{
+
+margin-bottom:20px;
+
+}
+
+.shadow{
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+.footer{
+
+background:#0f172a;
+
+padding:45px 20px;
+
+text-align:center;
+
+margin-top:80px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+color:#38bdf8;
+
+}
+
+.footer p{
+
+color:#cbd5e1;
+
+margin:10px 0;
+
+}
+.compare-again-btn{
+
+    display:block;
+
+    width:320px;
+
+    margin:35px auto 0;
+
+    padding:16px 24px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(90deg,#2563eb,#3b82f6);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.compare-again-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+    background:linear-gradient(90deg,#1d4ed8,#2563eb);
+
+}
